@@ -2,8 +2,14 @@ let strip = document.getElementById('strip_strip');
 let head = document.getElementById('strip_head');
 let state = document.getElementById('strip_state');
 
+let CELLS_COUNT = 57;
+
+let DEFAULT_CHAR = '0';
+
+let ALPHABET
+
 window.onload = () => {
-    init_strip('0', 57);
+    init_strip(DEFAULT_CHAR, CELLS_COUNT);
 
     // setHead(5);
     // MathJax.Hub.Queue(['Typeset', MathJax.Hub, 'machine-strip']);
@@ -16,10 +22,12 @@ function init_strip(default_char, count) {
 
     let cells = '';
 
-    for (let i = 0; i < count; i++) {
-        strip.innerHTML += `<td id="sp_${i}"> ${default_char} </td>`
-        head.innerHTML  += `<td id="hd_${i}" class="invisible"></td>`
-        state.innerHTML += `<td id="st_${i}" class="invisible"></td>`
+    CELLS_COUNT = count;
+    for (let i = 0; i < CELLS_COUNT; i++) {
+        strip.innerHTML += `<td><input type="text" class="cell" id="sp_${i}" value="${default_char}"></td>`;
+
+        head.innerHTML  += `<td id="hd_${i}" class="invisible"></td>`;
+        state.innerHTML += `<td id="st_${i}" class="invisible"></td>`;
     }
 
     document.getElementById('hd_0').innerText = '↑';
@@ -28,6 +36,21 @@ function init_strip(default_char, count) {
     // strip.innerHTML = cells;
     // head.innerHTML = cells;
     // state.innerHTML = cells;
+}
+
+function update_cell_change_event() {
+    for (let i = 0; i < CELLS_COUNT; i++) {
+        document.getElementById(`sp_${i}`).onchange = 
+    }
+}
+
+function get_update_cell_rule(cell_id) {
+    cell = document.getElementById('cell_id');
+    let cell_text = '';
+    for (let i = 0; i < el.value.length; i++) {
+        
+    }
+
 }
 
 function main() {
