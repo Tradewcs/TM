@@ -1,0 +1,20 @@
+.wrapper {
+    padding: 15px;
+}
+
+table,
+th,
+td {
+    border-spacing: 0;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 5px;
+    text-align: center;
+}
+
+td, tr {
+    width: 1000px;
+}
