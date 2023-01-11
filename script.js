@@ -6,7 +6,7 @@ let CELLS_COUNT = 57;
 
 let DEFAULT_CHAR = '0';
 
-let ALPHABET
+let ALPHABET = new Array('0', '1');
 
 window.onload = () => {
     init_strip(DEFAULT_CHAR, CELLS_COUNT);
@@ -24,7 +24,7 @@ function init_strip(default_char, count) {
 
     CELLS_COUNT = count;
     for (let i = 0; i < CELLS_COUNT; i++) {
-        strip.innerHTML += `<td><input type="text" class="cell" id="sp_${i}" value="${default_char}"></td>`;
+        strip.innerHTML += `<td><input type="text" class="cell" id="sp_${i}" value="${default_char}" maxlength="1"></td>`;
 
         head.innerHTML  += `<td id="hd_${i}" class="invisible"></td>`;
         state.innerHTML += `<td id="st_${i}" class="invisible"></td>`;
@@ -38,21 +38,11 @@ function init_strip(default_char, count) {
     // state.innerHTML = cells;
 }
 
-function update_cell_change_event() {
+function update_cell_onchange() {
     for (let i = 0; i < CELLS_COUNT; i++) {
-        document.getElementById(`sp_${i}`).onchange = 
+        document.getElementById(`sp_${i}`).onchange = function (this_el) {
+            console.log(this_el);
+        }
     }
 }
 
-function get_update_cell_rule(cell_id) {
-    cell = document.getElementById('cell_id');
-    let cell_text = '';
-    for (let i = 0; i < el.value.length; i++) {
-        
-    }
-
-}
-
-function main() {
-
-}

@@ -14,8 +14,8 @@
 
 <body>
     <div class="wrapper">
-        <div id="container_strip">
-            <table id="strip_table">
+        <div class="container_strip">
+            <table class="strip_table">
                 <thead>
                 </thead>
                 <tbody class="section">
@@ -29,7 +29,48 @@
         
 
         <div id="control">
-
+            <table class="control_table">
+                <thead>
+                    <th>Add new symbol to the Alphabeth</th>
+                    <th>Machine info</th>
+                    <th>Commands</th>
+                </thead>
+                <tbody>
+                    <td>
+                        Enter character you want to add:
+                        <input type="text" id="char_to_add" maxlength="1">
+                        <button id="add_char_btn">Add</button>
+                    </td>
+                    <td>
+                        <ul id="states_list">
+                            <li>q <sub>1</sub></li>
+                            <li>q <sub>0</sub></li>
+                        </ul>
+                        <p>Alphabeth:</p>
+                    </td>
+                    <td>
+                        <table class="commands_table">
+                            <thead>
+                                <th>&nbsp</th>
+                                <th>0</th>
+                                <th>1</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>q <sub>1</sub></td>
+                                    <td><input type="text" class="cell command_input"></td>
+                                    <td><input type="text" class="cell command_input"></td>
+                                </tr>
+                                <tr>
+                                    <td>q <sub>0</sub></td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tbody>
+            </table>
         </div>
     </div>
 

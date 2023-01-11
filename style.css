@@ -14,13 +14,16 @@ td {
     border-collapse: collapse;
 }
 
-td {
+td, th {
     padding: 5px;
     text-align: center;
 }
 
-td, tr {
-    width: 1000px;
+
+.container_strip {
+    overflow: scroll;
+    padding: 20px;
+    margin: 10px;
 }
 
 .invisible {
@@ -31,4 +34,22 @@ td, tr {
     width: 30px;
     text-align: center;
     background-color: transparent;
+}
+
+.command_input {
+    width: 100px;
+}
+
+#char_to_add {
+    width: 20px;
+    padding: 2px;
+    text-align: center;
+}
+
+#add_char_btn {
+    display: block;
+    margin: auto;
+    margin-top: 5px;
+    padding: 6px;
+    border-radius: 10%;
 }
