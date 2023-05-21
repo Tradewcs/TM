@@ -31,18 +31,24 @@ function init_strip(default_char, count) {
     }
 
     document.getElementById('hd_0').innerText = '↑';
-    document.getElementById('st_0').innerHTML = 'q <sub> 0 </sub>';
+    document.getElementById('st_0').innerHTML = 'q<sub>0</sub>';
 
-    // strip.innerHTML = cells;
-    // head.innerHTML = cells;
-    // state.innerHTML = cells;
+    update_cell_onchange();
 }
 
 function update_cell_onchange() {
     for (let i = 0; i < CELLS_COUNT; i++) {
-        document.getElementById(`sp_${i}`).onchange = function (this_el) {
-            console.log(this_el);
-        }
+        // console.log(document.getElementById(`sp_${i}`));
+        document.getElementById(`sp_${i}`).onchange = update;
     }
+}
+
+function update(change) {
+
+    let el = change.target;
+    if (!ALPHABET.includes(el.value)) {
+        el.value = DEFAULT_CHAR;
+    }
+    console.log(change);
 }
 
